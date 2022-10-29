@@ -1,0 +1,72 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Plamen6789rock's Prison Life GUI", "DarkTheme")
+
+--Main
+local Main = Window:NewTab("Main")
+local MainSection = Main:NewSection("Main")
+
+MainSection:NewButton("Give all Items", "Grants you all items.", function()
+    local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver.M9.ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["Remington 870"].ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].giver["AK-47"].ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single.Hammer.ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Crude Knife"].ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+
+local A_1 = game:GetService("Workspace")["Prison_ITEMS"].single["Key card"].ITEMPICKUP
+local Event = game:GetService("Workspace").Remote.ItemHandler
+Event:InvokeServer(A_1)
+end)
+
+MainSection:NewButton("Infinite Yield Admin", "Gives you Infinite Yield Admin.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source",true))();
+end)
+
+MainSection:NewLabel("Team Changer")
+
+MainSection:NewButton("Police Team", "Puts you on the police team.", function()
+    local A_1 = "Bright blue"
+    local Event = game:GetService("Workspace").Remote.TeamEvent
+    Event:FireServer(A_1)    
+end)
+
+MainSection:NewButton("Prisoner Team", "Puts you on the prisoner team.", function()
+local A_1 = "Bright orange"
+local Event = game:GetService("Workspace").Remote.TeamEvent
+Event:FireServer(A_1)    
+end)
+
+MainSection:NewButton("Neutral Team", "Puts you on the neutral team.", function()
+    local A_1 = "Medium stone grey"
+    local Event = game:GetService("Workspace").Remote.TeamEvent
+    Event:FireServer(A_1)  
+    end)
+
+    MainSection:NewLabel("Neutral team will put you")
+    MainSection:NewLabel("on the menu once you die.")
+
+    
+--LocalPlayer
+local Player = Window:NewTab("Local Player")
+local PlayerSection = Player:NewSection("Hacks for your player.")
+
+PlayerSection:NewSlider("Walkspeed", "Changes your walkspeed.", 500, 16, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+PlayerSection:NewSlider("JumpPower", "Changes your jumppower.", 500, 50, function(s) -- 500 (MaxValue) | 0 (MinValue)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
